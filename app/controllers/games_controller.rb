@@ -1,3 +1,3 @@
-class GamesController < ActiveRecord::Base
+class GamesController < ApplicationController
 
 end
