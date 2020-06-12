@@ -67,7 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 6.0)
-  activesupport (~> 6.0)
+  activesupport
   bcrypt (~> 3.1)
   pry (~> 0.13.1)
   rack (~> 2.2)
