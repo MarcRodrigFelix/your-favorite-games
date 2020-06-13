@@ -1,19 +1,32 @@
 class UsersController < ApplicationController
 
   get '/login' do
-    if logged_in?
-      erb :home
-    end
+    erb :'users/login'
   end
 
   get '/signup' do
-    erb :signup
+    erb :'users/signup'
   end
 
   post '/signup' do
-    @user = User.create(username: params[:username], email: params[:email], password: params[:password])
-    session[:user_id] = @user.id
-    erb :home
+    @user = User.new(username: params[:username], password: params[:password])
+    if @user.save
+      session[:user_id] = @user.id
+      redirect '/home'
+    else
+      erb :'users/signup'
+    end
+  end
+
+  post '/login' do
+    @user = User.find_by(username: params[:username])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect '/home'
+    else
+      @error = "Invalid Username or Password"
+      erb :'users/login'
+    end
   end
 
 
