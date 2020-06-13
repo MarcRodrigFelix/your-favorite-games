@@ -9,8 +9,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/home' do
+    authenticate
     @user = current_user
-    erb :home
+    erb :'users/home'
   end
 
   helpers do
