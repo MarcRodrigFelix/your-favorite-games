@@ -1,6 +1,6 @@
 <h2>You are logged in <%= current_user.username %>!</h2>
 
-<% if current_user.games %>
+<% if !current_user.games.empty? %>
 
 <h3>Here is your list !!</h3>
 
@@ -13,5 +13,5 @@
 <% else %>
 
 <h3>Oops, looks like you dont have any games. Why don't you add some?</h3>
-  <p></p><a href="../games/new_game">Start a list, add your first game.</a>
+  <p><a href="../games/new_game">Start</a> a list, add your first game.</p>
 <% end %>
