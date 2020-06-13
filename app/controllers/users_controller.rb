@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
 
   get '/login' do
-    if logged_in?
-      @user = current_user
-      erb :login
-    else
+    if !logged_in?
       redirect to '/signup'
     end
+      @user = current_user
+      erb :login
   end
 
   get '/signup' do
