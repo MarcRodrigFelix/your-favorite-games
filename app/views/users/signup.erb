@@ -1,6 +1,11 @@
 <h1>Sign up to make a list of your favorite games!!</h1>
 <h3>I know pretty cool right..</h3>
 
+<% if @user && @user.errors.any? %>
+  <% @user.errors.full_messages.each do |error| %>
+    <p class="errors"><%= error %></p>
+  <% end %>
+<% end %>
 
 <form action="/signup" method="POST">
   <label for="username">Username:</label>
