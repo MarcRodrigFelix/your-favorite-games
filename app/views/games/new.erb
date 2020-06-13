@@ -1,11 +1,13 @@
-<h2>Hey <%= current_user.username %>, We can add a new game to your list here.</h2>
+<h2>Hey <%= current_user.username %>, you can add a new game to your list here.</h2>
 
 <form action="/new" method="POST">
 <label for="name">What is the name of the game you wish to add?</label>
-  <input type="text" name="name">
+  <input type="text" name="name"><br>
 <label for="genre">What genre do you consider the game to be?</label>
-  <input type="text" name="genre">
+  <input type="text" name="genre"><br>
 <label for="reason">What is the reason this game belongs in your top list?</label>
-  <input type="text" name="reason">
+  <input type="text" name="reason"><br>
   <input type="submit" name="submit" value="Add game">
 </form>
+
+<p>Just a hint, once you add the game you will be taken back to view your list!</p>
