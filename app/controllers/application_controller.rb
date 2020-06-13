@@ -10,9 +10,10 @@ class ApplicationController < Sinatra::Base
 
   get '/home' do
     authenticate
-    @user = current_user
     erb :'users/home'
   end
+
+
 
   helpers do
 
@@ -21,7 +22,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      User.find_by(id: session[:user_id])
+      @user ||= User.find_by(id: session[:user_id])
     end
 
     def authenticate

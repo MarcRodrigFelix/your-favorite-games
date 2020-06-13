@@ -1,2 +1,8 @@
-<h2>You are logged in <%= @user.username %>!</h2>
-<h4>Here is your list: !!</h4>
+<h2>You are logged in <%= current_user.username %>!</h2>
+<h3>Here is your list !!</h3>
+
+<% if current_user.games %>
+  <% current_user.games.each do |game| %>
+    <p><%= game.id %>. Game Name: <strong>"<%= game.name %>"</strong> | Game Genre: <strong>"<%= game.genre %>"</strong> | Reason why you love this game: <strong>"<%= game.reason %>"</strong></p>
+  <% end %>
+<% end %>
