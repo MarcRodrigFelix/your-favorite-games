@@ -1,8 +1,16 @@
 <h2>You are logged in <%= current_user.username %>!</h2>
-<h3>Here is your list !!</h3>
 
 <% if current_user.games %>
+
+<h3>Here is your list !!</h3>
+
   <% current_user.games.each do |game| %>
     <p><%= game.id %>. Game Name: <strong>"<%= game.name %>"</strong> | Game Genre: <strong>"<%= game.genre %>"</strong> | Reason why you love this game: <strong>"<%= game.reason %>"</strong></p>
   <% end %>
+  <a href="../games/delete">Delete a game.</a>
+  <a href="../games/edit">Edit your games.</a>
+<% else %>
+
+<h3>Oops, looks like you dont have any games. Why don't you add some?</h3>
+  <a href="../games/new_game">Add new game.</a>
 <% end %>
