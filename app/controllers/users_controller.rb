@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
 
   get '/login' do
+    authenticate
     erb :'users/login'
   end
 
   get '/signup' do
+    if logged_in?
+      redirect "/games"
+    end
     erb :'users/signup'
   end
 

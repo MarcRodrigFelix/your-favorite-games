@@ -6,12 +6,8 @@ class GamesController < ApplicationController
     erb :'users/games'
   end
 
-  get '/games/:id' do
-    @game = Game.find_by(id: params[:id])
-    erb :'games/show'
-  end
-
   get '/games/new' do
+    authenticate
     erb :'games/new'
   end
 
@@ -25,9 +21,9 @@ class GamesController < ApplicationController
     end
   end
 
-  get '/games/:id/delete' do
+  get '/games/:id' do
     @game = Game.find_by(id: params[:id])
-    erb :'games/delete'
+    erb :'games/show'
   end
 
   post '/games/:id/delete' do
