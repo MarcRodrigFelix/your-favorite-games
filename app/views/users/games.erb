@@ -1,16 +1,21 @@
 <h2>You are logged in <%= current_user.username %>.</h2>
 
-<p>This is where home page where your list of favorite games will be displayed.</p>
+<p>This is where home page where your list of favorite games will be displayed. You may click anywhere on the game itself to view its page! Enjoy.</p>
+
 <% if !current_user.games.empty? %>
 
 <h3>Here is your list of favorite games:</h3>
 
   <% @games.each do |game| %>
+    <a href="/game/<%= game.id %>">Click here to view game page.</a>
+    
     <p><%= game.id %>. Game Name: <strong>"<%= game.name %>"</strong> | Game Genre: <strong>"<%= game.genre %>"</strong> | Reason why you love this game: <strong>"<%= game.reason %>"</strong></p>
   <% end %>
+
   <p><a href="/new_game">Add</a> a game to your list.</p>
   <p><a href="/delete/">Delete</a> a game from your list.</p>
   <p><a href="/game/">Edit</a> your games list.</p>
+
 <% else %>
 
 <h3>Oops, looks like you dont have any games. Why don't you add some?</h3>

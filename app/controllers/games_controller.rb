@@ -6,6 +6,12 @@ class GamesController < ApplicationController
     erb :'users/games'
   end
 
+  get '/game/:id' do
+binding.pry
+    @game = Game.find_by(id: params[:id])
+    erb :'games/show'
+  end
+
   get '/new_game' do
     erb :'games/new_game'
   end
@@ -17,7 +23,7 @@ class GamesController < ApplicationController
       redirect '/games'
     else
       erb :'games/new_game'
-    end    
+    end
   end
 
   
