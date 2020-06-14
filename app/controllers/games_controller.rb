@@ -26,7 +26,12 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id/delete' do
+    @game = Game.find_by(id: params[:id])
+    erb :'games/delete'
+  end
 
-  end  
+  post '/games/:id/delete' do
+  binding.pry
+  end
 
 end

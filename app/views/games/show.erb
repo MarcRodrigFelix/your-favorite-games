@@ -7,4 +7,8 @@
 
 <p>Go back to your<a href="/games"> list.</a></p>
 <p><a href="/games/<%= @game.id %>/delete">Delete</a> this game from your game.</p>
+<form action="/games/<%= @game.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="Delete">
+</form>
 <p><a href="/logout">Go</a> bye bye.</p>
