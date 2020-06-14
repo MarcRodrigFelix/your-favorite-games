@@ -7,8 +7,12 @@
 <h3>Here is your list of favorite games:</h3>
 
   <% @games.each do |game| %>
+  
+  <ul>
+    <li><p><a href="/games/<%= game.id %>"><strong>"<%= game.name %>"</strong></a></p>
+    </li>
+  </ul>
 
-    <p><%= game.id %>. Game Name: <a href="/games/<%= game.id %>"><strong>"<%= game.name %>"</strong></a>
   <% end %>
 
   <p><a href="/games/new">Add</a> a game to your list.</p>
