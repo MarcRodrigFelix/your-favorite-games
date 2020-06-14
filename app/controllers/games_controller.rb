@@ -21,9 +21,24 @@ class GamesController < ApplicationController
     end
   end
 
-  get '/games/:id' do
+  get '/games/:id' do #loads show.erb to show game details
     @game = Game.find_by(id: params[:id])
     erb :'games/show'
+  end
+
+  get '/games/:id/edit' do
+    authenticate
+    @game = Game.find_by(id: params[:id])
+    erb :'games/edit'
+  end
+
+  patch '/games/:id' do
+    @game = Game.find_by(id: params[:id])
+    @game.name = params[:name]
+    @game.genre = params[:genre]
+    @game.reason = params[:reason]
+    @game.save
+    redirect "/games/#{@game.id}"
   end
 
   delete '/games/:id' do

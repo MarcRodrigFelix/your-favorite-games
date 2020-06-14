@@ -1,0 +1,9 @@
+<h2>Edit!</h2>
+
+<form action="/games/<%= @game.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  <input type="text" name="name" placeholder="Game Name">
+  <input type="text" name="genre" placeholder="Genre">
+  <input type="text" name="reason" placeholder="Reason for adding">
+  <input type="submit" name="submit" value="Edit">
+</form>
