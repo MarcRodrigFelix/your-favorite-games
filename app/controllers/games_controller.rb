@@ -6,25 +6,27 @@ class GamesController < ApplicationController
     erb :'users/games'
   end
 
-  get '/game/:id' do
+  get '/games/:id' do
     @game = Game.find_by(id: params[:id])
     erb :'games/show'
   end
 
-  get '/new_game' do
-    erb :'games/new_game'
+  get '/games/new' do
+    erb :'games/new'
   end
 
-  post '/new_game' do
+  post '/games/new' do
     @game = Game.new(name: params[:name], genre: params[:genre], reason: params[:reason])
     @game.user = current_user
     if @game.save
       redirect '/games'
     else
-      erb :'games/new_game'
+      erb :'games/new'
     end
   end
 
-  
+  get '/games/:id/delete' do
+
+  end  
 
 end

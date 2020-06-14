@@ -6,4 +6,5 @@
 <p><strong><%= current_user.username %></strong>'s reason for putting this game on their top games list: <%= @game.reason %></p>
 
 <p>Go back to your<a href="/games"> list.</a></p>
+<p><a href="/games/<%= @game.id %>/delete">Delete</a> this game from your game.</p>
 <p><a href="/logout">Go</a> bye bye.</p>

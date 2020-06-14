@@ -8,15 +8,15 @@
 
   <% @games.each do |game| %>
 
-    <p><%= game.id %>. Game Name: <a href="/game/<%= game.id %>"><strong>"<%= game.name %>"</strong></a>
+    <p><%= game.id %>. Game Name: <a href="/games/<%= game.id %>"><strong>"<%= game.name %>"</strong></a>
   <% end %>
 
-  <p><a href="/new_game">Add</a> a game to your list.</p>
-  <p><a href="/delete/">Delete</a> a game from your list.</p>
-  <p><a href="/game/">Edit</a> your games list.</p>
+  <p><a href="/games/new">Add</a> a game to your list.</p>
+  <p><a href="/delete">Delete</a> a game from your list.</p>
+  <p><a href="/game">Edit</a> your games list.</p>
 
 <% else %>
 
 <h3>Oops, looks like you dont have any games. Why don't you add some?</h3>
-  <p><a href="/new_game">Start</a> a list, add your first game.</p>
+  <p><a href="/games/new">Start</a> a list, add your first game.</p>
 <% end %>

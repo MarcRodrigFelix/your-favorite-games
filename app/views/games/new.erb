@@ -1,6 +1,6 @@
 <h2>Hey <%= current_user.username %>, you can add a new game to your list here.</h2>
 
-<form action="/new_game" method="POST">
+<form action="/games/new" method="POST">
 <label for="name">What is the name of the game you wish to add?</label>
   <input type="text" name="name"><br>
 <label for="genre">What genre do you consider the game to be?</label>
