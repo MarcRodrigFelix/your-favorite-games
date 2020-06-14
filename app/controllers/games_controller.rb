@@ -7,7 +7,6 @@ class GamesController < ApplicationController
   end
 
   get '/game/:id' do
-binding.pry
     @game = Game.find_by(id: params[:id])
     erb :'games/show'
   end
