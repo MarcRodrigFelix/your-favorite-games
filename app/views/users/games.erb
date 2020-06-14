@@ -20,3 +20,9 @@
 <h3>Oops, looks like you dont have any games. Why don't you add some?</h3>
   <p><a href="/games/new">Start</a> a list, add your first game.</p>
 <% end %>
+
+
+  <form action="/logout" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Logout" name="submit">
+  </form>
