@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(username: params[:username], password: params[:password])
     if @user.save
       session[:user_id] = @user.id
-      redirect '/home'
+      redirect '/games'
     else
       erb :'users/signup'
     end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect '/home'
+      redirect '/games'
     else
       @error = "Invalid Username or Password"
       erb :'users/login'
