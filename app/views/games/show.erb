@@ -6,9 +6,17 @@
 <p><strong><%= current_user.username %></strong>'s reason for putting this game on their top games list: <%= @game.reason %></p>
 
 <p>Go back to your<a href="/games"> list.</a></p>
+
 <p><a href="/games/<%= @game.id %>/delete">Delete</a> this game from your game.</p>
+
 <form action="/games/<%= @game.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" name="Delete">
+  <input type="submit" name="submit" value="Delete">
 </form>
-<p><a href="/logout">Go</a> bye bye.</p>
+
+<p>You can also logout if you'd like:
+  <form action="/logout" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Logout" name="submit">
+  </form>
+</p>
