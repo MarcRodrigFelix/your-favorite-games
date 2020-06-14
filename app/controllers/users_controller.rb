@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-    authenticate
     erb :'users/login'
   end
 
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
     end
   end
 
-  post '/logout' do
+  delete '/logout' do
     session.clear
     redirect '/login'
   end

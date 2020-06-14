@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 
   get '/games' do
     authenticate
-    @games = Game.all
+    @games = current_user.games
     erb :'users/games'
   end
 
@@ -26,8 +26,11 @@ class GamesController < ApplicationController
     erb :'games/show'
   end
 
-  post '/games/:id/delete' do
-  binding.pry
+  delete '/games/:id' do
+    authenticate
+    @game = Game.find_by(id: params[:id])
+    @game.delete
+    redirect "/games"
   end
 
 end
