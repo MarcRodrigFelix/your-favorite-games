@@ -1,13 +1,13 @@
-<h2>You are logged in <%= current_user.username %>!</h2>
-
+<h2>You are logged in <%= current_user.username %>.</h2>
+<p>This is where home page where your list of favorite games will be displayed.</p>
 <% if !current_user.games.empty? %>
 
-<h3>Here is your list !!</h3>
+<h3>Here is your list of favorite games:</h3>
 
   <% current_user.games.each do |game| %>
     <p><%= game.id %>. Game Name: <strong>"<%= game.name %>"</strong> | Game Genre: <strong>"<%= game.genre %>"</strong> | Reason why you love this game: <strong>"<%= game.reason %>"</strong></p>
   <% end %>
-  <p><a href="/new.erb">Add</a> a game to your list.</p>
+  <p><a href="/new_game">Add</a> a game to your list.</p>
   <p><a href="../games/delete">Delete</a> a game from your list.</p>
   <p><a href="../games/edit">Edit</a> your games list.</p>
 <% else %>
