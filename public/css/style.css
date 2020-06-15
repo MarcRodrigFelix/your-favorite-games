@@ -1,4 +1,8 @@
 body {
   font-size: 14px;
-  background-color: palevioletred;
+  background-color: #898feb;
+}
+
+a {
+  text-decoration: none;
 }
