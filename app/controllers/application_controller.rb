@@ -21,6 +21,10 @@ class ApplicationController < Sinatra::Base
     def authenticate
       redirect '/login' if !logged_in?
     end
+
+    def current_game
+      @game ||= Game.find_by(id: params[:id])
+    end
   end
 
 end
