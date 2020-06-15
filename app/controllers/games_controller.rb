@@ -22,6 +22,7 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id' do #loads show.erb to show game details
+    authenticate
     @game = Game.find_by(id: params[:id])
     erb :'games/show'
   end
