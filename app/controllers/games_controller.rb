@@ -34,13 +34,12 @@ class GamesController < ApplicationController
   end
 
   patch '/games/:id' do
-    authenticate
-      @game = Game.find_by(id: params[:id])
-      @game.name = params[:name]
-      @game.genre = params[:genre]
-      @game.reason = params[:reason]
-      @game.save
-      redirect "/games/#{@game.id}"
+    @game = Game.find_by(id: params[:id])
+    params[:new_name] == "" ? @game.name : @game.name = params[:new_name]
+    params[:new_genre] == "" ? @game.genre : @game.genre = params[:new_genre]
+    params[:new_reason] == "" ? @game.reason : @game.reason = params[:new_reason]
+    @game.save
+    redirect "/games/#{@game.id}"
   end
 
   delete '/games/:id' do
