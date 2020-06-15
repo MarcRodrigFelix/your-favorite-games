@@ -7,19 +7,17 @@
 
 <p>Go back to your<a href="/games"> list.</a></p>
 
-<p>Does something look wrong with the game? You can edit it don't worry! <button><a href="/games/<%= @game.id %>/edit">Edit</a></button>
+<p>Edit this <button><a href="/games/<%= @game.id %>/edit">game</a></button>
 </p>
 
-<p>Delete this game from your list.
-  <form action="/games/<%= @game.id %>" method="POST">
+<p>Delete this<a href="/games/<%= @game.id%>/delete"> game.</a>
+  <!-- %= <form action="/games/<%= @game.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" name="submit" value="Delete">
-  </form>
+  </form> % --> 
 </p>
 
-<p>You can also logout if you'd like.
   <form action="/logout" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Logout" name="submit">
   </form>
-</p>

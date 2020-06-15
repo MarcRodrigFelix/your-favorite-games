@@ -42,6 +42,11 @@ class GamesController < ApplicationController
     redirect "/games/#{@game.id}"
   end
 
+  get '/games/:id/delete' do
+    @game = Game.find_by(id: params[:id])
+    erb :'games/delete'
+  end
+  
   delete '/games/:id' do
     authenticate
     @game = Game.find_by(id: params[:id])
