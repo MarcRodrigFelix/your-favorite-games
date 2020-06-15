@@ -34,16 +34,12 @@ class GamesController < ApplicationController
 
   patch '/games/:id' do
     authenticate
-  if params[:name] == "" || params[:genre] == "" || params[:reason] == ""
-    @error = "Looks like something is wrong, try to fill out all the fields."
-    erb :'/games/edit'
-  end
-    @game = Game.find_by(id: params[:id])
-    @game.name = params[:name]
-    @game.genre = params[:genre]
-    @game.reason = params[:reason]
-    @game.save
-    redirect "/games/#{@game.id}"
+      @game = Game.find_by(id: params[:id])
+      @game.name = params[:name]
+      @game.genre = params[:genre]
+      @game.reason = params[:reason]
+      @game.save
+      redirect "/games/#{@game.id}"
   end
 
   delete '/games/:id' do
