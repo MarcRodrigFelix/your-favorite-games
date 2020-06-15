@@ -1,6 +1,6 @@
 <h2>You are logged in <%= current_user.username %>.</h2>
 
-<p>This is where home page where your list of favorite games will be displayed. You can click on the game itself to view its page! Enjoy.</p>
+<p>This is where home page where your list of favorite games will be displayed. You can click on the game itself to view its page, edit or delete if need be. Enjoy.</p>
 
 <% if !current_user.games.empty? %>
 
@@ -15,9 +15,7 @@
 
   <% end %>
 
-  <p><a href="/games/new">Add</a> a game to your list.</p>
-  <p><a href="/delete">Delete</a> a game from your list.</p>
-  <p><a href="/game">Edit</a> your games list.</p>
+  <p><button><a href="/games/new">Add</a></button> a game to your list.</p>
 
 <% else %>
 
