@@ -1,8 +1,32 @@
+* {
+  /* margin: 0 auto; */
+  align-content: center;
+  text-align: center;
+  margin: 7px auto;
+}
+
 body {
-  font-size: 14px;
-  background-color: #898feb;
+  background-color: rgb(134, 219, 247);
 }
 
 a {
   text-decoration: none;
+  background-color: white;
+  border: black;
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button {
+  background: white;
+  border-radius: 20px;
+}
+
+input[name="logout"] {
+  background: white;
 }
