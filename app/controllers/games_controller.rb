@@ -48,9 +48,14 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id/delete' do
-    authenticate
-    current_game
-    erb :'games/delete'
+    if valid_user?
+      authenticate
+      current_game
+      erb :'games/delete'
+    else
+      redirect '/games'
+    end
+    
   end
   
   delete '/games/:id' do
