@@ -23,6 +23,7 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id' do #loads show.erb to show game details
+    redirect '/games' if current_game.nil?
     if valid_user?
       authenticate
       current_game
@@ -34,6 +35,7 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id/edit' do
+    redirect '/games' if current_game.nil?
     if valid_user?
       authenticate
       erb :'games/edit'
@@ -53,6 +55,7 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id/delete' do
+    redirect '/games' if current_game.nil?
     if valid_user?
       authenticate
       current_game
