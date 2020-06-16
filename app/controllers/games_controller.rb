@@ -23,9 +23,14 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id' do #loads show.erb to show game details
-    authenticate
-    current_game
-    erb :'games/show'
+    if valid_user?
+      authenticate
+      current_game
+      erb :'games/show'
+    else
+      redirect '/games'
+    end
+
   end
 
   get '/games/:id/edit' do
