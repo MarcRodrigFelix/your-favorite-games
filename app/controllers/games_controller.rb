@@ -12,6 +12,7 @@ class GamesController < ApplicationController
   end
 
   post '/games/new' do
+    authenticate
     @game = Game.new(name: params[:name], genre: params[:genre], reason: params[:reason])
     @game.user = current_user
     if @game.save
@@ -28,12 +29,16 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id/edit' do
-    authenticate
-    current_game
-    erb :'games/edit'
+    if valid_user?
+      authenticate
+      erb :'games/edit'
+    else
+      redirect '/games'
+    end
   end
 
   patch '/games/:id' do
+    authenticate
     current_game
     params[:new_name] == "" ? @game.name : @game.name = params[:new_name]
     params[:new_genre] == "" ? @game.genre : @game.genre = params[:new_genre]
@@ -43,6 +48,7 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id/delete' do
+    authenticate
     current_game
     erb :'games/delete'
   end

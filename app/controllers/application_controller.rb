@@ -25,6 +25,11 @@ class ApplicationController < Sinatra::Base
     def current_game
       @game ||= Game.find_by(id: params[:id])
     end
+
+    def valid_user?
+      current_game.user_id == current_user.id
+    end
+
   end
 
 end
