@@ -42,3 +42,7 @@ input[name="logout"] {
   padding: 4px 12px;
   cursor: pointer;
 }
+
+.not-found{
+  background-color: red;
+}
