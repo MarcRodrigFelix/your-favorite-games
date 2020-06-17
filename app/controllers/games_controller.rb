@@ -23,7 +23,7 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id' do #loads show.erb to show game details
-    error if current_game.nil?
+    # error if current_game.nil?
     if valid_user?
       authenticate
       current_game

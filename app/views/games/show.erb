@@ -1,5 +1,5 @@
 
-<p>Hello World, this is the game page for <strong><%= @game.name %></strong></p>
+<p>This is the game page for <strong><%= @game.name %></strong></p>
 
 <p><strong><%= current_user.username %></strong> thinks that <strong><%= @game.name %></strong> belongs in the <strong><%= @game.genre %></strong> genre.</p>
 
@@ -7,7 +7,7 @@
 
 <p>Go back to your<a href="/games"> list.</a></p>
 
-<p>Edit this <button><a href="/games/<%= @game.id %>/edit">game</a></button>
+<p>Edit this <a href="/games/<%= @game.id %>/edit">game</a>
 </p>
 
 <p>Delete this<a href="/games/<%= @game.id%>/delete"> game.</a>

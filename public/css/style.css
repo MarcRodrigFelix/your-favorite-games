@@ -45,4 +45,5 @@ input[name="logout"] {
 
 .not-found{
   background-color: red;
+  color: red;
 }
