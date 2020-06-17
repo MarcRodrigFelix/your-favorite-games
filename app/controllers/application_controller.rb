@@ -3,6 +3,7 @@ class ApplicationController < Sinatra::Base
   set :views, ->{ File.join(root, '../views')}
   enable :sessions
   set :session_secret, ENV['SECRET_SESSION_PW']
+  disable :show_exceptions
 
   get '/' do
     erb :index
@@ -30,6 +31,10 @@ class ApplicationController < Sinatra::Base
       current_game.user_id == current_user.id
     end
 
+  end
+
+  error ActiveRecord::RecordNotFound do
+    erb :
   end
 
 end
