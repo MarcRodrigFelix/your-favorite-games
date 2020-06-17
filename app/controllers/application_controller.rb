@@ -35,7 +35,7 @@ class ApplicationController < Sinatra::Base
 
   error ActiveRecord::RecordNotFound do
     status 404
-    erb :not_found, layout: false,
+    erb :not_found, layout: false
   end
 
 end
