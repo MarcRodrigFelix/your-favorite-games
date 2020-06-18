@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def authenticate
-      redirect '/login' if !logged_in?
+      raise AuthenticationError.new if !logged_in?
     end
 
     def current_game
@@ -36,6 +36,11 @@ class ApplicationController < Sinatra::Base
   not_found do
     status 404
     erb :not_found, layout: false
+  end
+
+  error AuthenticationError do
+    status 403
+    erb :not_auth, layout: false
   end
 
   error ActiveRecord::RecordNotFound do
