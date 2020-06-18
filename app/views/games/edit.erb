@@ -4,7 +4,7 @@
 
   <form action="/games/<%= @game.id %>" method="POST">
     <input type="hidden" name="_method" value="PATCH">
-    <input type="text" name="new_name" placeholder="Edit Game name">
+    <input type="text" name="new_title" placeholder="Edit Game Title">
     <input type="text" name="new_genre" placeholder="Edit Genre">
     <input type="text" name="new_reason" placeholder="Edit Reason">
     <input type="submit" name="edit" value="edit">

@@ -13,7 +13,7 @@ class GamesController < ApplicationController
 
   post '/games/new' do
     authenticate
-    @game = Game.new(name: params[:name], genre: params[:genre], reason: params[:reason])
+    @game = Game.new(title: params[:title], genre: params[:genre], reason: params[:reason])
     @game.user = current_user
     if @game.save
       redirect '/games'
@@ -45,7 +45,7 @@ class GamesController < ApplicationController
   patch '/games/:id' do
     authenticate
     current_game
-    params[:new_name] == "" ? @game.name : @game.name = params[:new_name]
+    params[:new_title] == "" ? @game.title : @game.title = params[:new_title]
     params[:new_genre] == "" ? @game.genre : @game.genre = params[:new_genre]
     params[:new_reason] == "" ? @game.reason : @game.reason = params[:new_reason]
     @game.save
