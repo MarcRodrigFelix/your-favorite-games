@@ -6,19 +6,20 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <title>Your Favorite Games</title>
 </head>
-<body class="main-wrapper">
-
-  <h1>Welcome to Your Favorite Games</h1>
-  
-  <%= yield %>
-  
-  <% if logged_in? %>
-  <br>
-  <br>
-    <form action="/logout" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Logout" name="logout">
-    </form>
-  <% end %>
+<body class="main-body">
+  <div class="main-div">
+    <h1>Welcome to Your Favorite Games</h1>
+    
+    <%= yield %>
+    
+    <% if logged_in? %>
+    <br>
+    <br>
+      <form action="/logout" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Logout" name="logout">
+      </form>
+    <% end %>
+  </div>
 </body>
 </html>
