@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_06_12_034738) do
 
   create_table "games", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.string "genre"
     t.string "reason"
     t.integer "user_id"
