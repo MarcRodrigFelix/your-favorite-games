@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
 
   error AuthenticationError do
     status 403
-    erb :not_auth, layout: false
+    erb :not_authorized, layout: false
   end
 
   error ActiveRecord::RecordNotFound do
