@@ -25,6 +25,11 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  color: blue;
+  background: blue;
+}
+
 ul {
   list-style: none;
 }
@@ -44,6 +49,6 @@ input[name="logout"] {
 }
 
 .not-found{
-  background-color: red;
-  color: red;
+  background: turquoise;
+  color: black;
 }

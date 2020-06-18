@@ -24,13 +24,18 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_game
-      @game ||= Game.find_by(id: params[:id])
+      @game ||= Game.find(params[:id])
     end
 
     def valid_user?
       current_game.user_id == current_user.id
     end
 
+  end
+
+  not_found do
+    status 404
+    erb :not_found, layout: false
   end
 
   error ActiveRecord::RecordNotFound do
