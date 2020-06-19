@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   disable :show_exceptions
 
   get '/' do
-    erb :'users/login'
+    erb :'index'
   end
 
   helpers do
