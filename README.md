@@ -19,11 +19,11 @@ Your Favorite Games, was created to make a list of your all time favorite games.
   
 ## Installation.
 You can download this repo and try it out locally, clone the repo and run
- * bundle install
+    $ bundle install
 Run the your local server with
- * shotgun or bundle exec shotgun
+    $ shotgun or bundle exec shotgun
 If you want test out the models 
- * rake console or bundle exec rake console
+    $ rake console or bundle exec rake console
 
 ## Gems Used.
   * Sinatra, "~> 2.0"
