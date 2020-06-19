@@ -11,29 +11,40 @@ body {
   font-family: 'Titillium Web', sans-serif;
   background-color: lightcyan;
   font-size: 16px;
+  width: 100%;
 }
 
-/* .main-body{
-  width: 100%;
-} */
-
 .main-div{
+  width: 100;
   align-content: center;
-  /* width: 200px; */
+  text-align: center;
   padding: 35px;
 }
 
 .login {
   padding: 25px 20px;
-  margin: 25px;
+  margin: 35px auto;
   width: 200px;
-  margin-left: 41%;
-  margin-right: 41%;
   background: white;
   border-radius: 7px;
   -webkit-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.65);
 -moz-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.65);
 box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.65);
+}
+
+.username{
+  margin-bottom: 10px;
+}
+
+.password{
+  margin-bottom: 10px;
+}
+
+.submit{
+}
+
+#signup-submit{
+  margin-top: 15px;
 }
 
 a {
