@@ -1,14 +1,10 @@
 * {
-  /* margin: 0 auto; */
   align-content: center;
   text-align: center;
   margin-top: 7px auto;
 }
 
 body {
-  /* font-family: 'MuseoModerno', cursive; */
-  /* font-family: 'Dosis', sans-serif; */
-  /* font-family: 'Titillium Web', sans-serif; */
   font-family: 'Balsamiq Sans';
   background-color: lightcyan;
   font-size: 16px;
@@ -66,11 +62,11 @@ a {
   display: inline-block;
   font-size: 18px;
   cursor: pointer;
-  color: black;
+  color: peru;
 }
 
 a:hover {
-  color: peru;
+  color: black;
 }
 
 ul {
@@ -83,7 +79,7 @@ button {
   cursor: pointer;
 }
 
-input[name="logout"] {
+/* input[name="logout"] {
   background: white;
   font-size: 12px;
   border-radius: 20px;
@@ -95,4 +91,4 @@ input[name="Delete"]{
   font-size: 12px;
   border-radius: 20px;
   cursor: pointer;
-}
+} */

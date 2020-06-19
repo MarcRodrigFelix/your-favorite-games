@@ -5,11 +5,11 @@
 
 <p>Reason for putting this game on their top games list: "<%= @game.reason %>"</p>
 
-<p>Go back to your <a href="/games">list.</a></p>
+<p><a href="/games">Go</a> back to your list.</p>
 
-<p>Edit this <a href="/games/<%= @game.id %>/edit">game.</a></p>
+<p><a href="/games/<%= @game.id %>/edit">Edit</a> this game.</p>
 
-<p>Delete this <a href="/games/<%= @game.id%>/delete">game.</a>
+<p><a href="/games/<%= @game.id%>/delete">Delete</a> this game.
   <!-- %= <form action="/games/<%= @game.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" name="submit" value="Delete">
