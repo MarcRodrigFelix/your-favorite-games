@@ -8,10 +8,7 @@
 
   <% @games.each do |game| %>
   
-  <ul>
-    <li><p><a href="/games/<%= game.id %>"><strong>"<%= game.title %>"</strong></a></p>
-    </li>
-  </ul>
+  <p><a href="/games/<%= game.id %>"><strong>"<%= game.title %>"</strong></a></p>
 
   <% end %>
 

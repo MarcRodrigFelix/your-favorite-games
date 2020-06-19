@@ -66,6 +66,7 @@ a {
   display: inline-block;
   font-size: 18px;
   cursor: pointer;
+  color: black;
 }
 
 a:hover {
