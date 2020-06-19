@@ -22,6 +22,14 @@ You can download this repo and try it out locally, clone the repo and run
 
     $ bundle install
 
+If schema error or not loaded run
+
+    $ rake db:schema:load
+
+You can test out users if you dont want to create one, look at db/seeds.rb and run
+
+    $ rake db:seed
+
 Run the your local server with
 
     $ shotgun or bundle exec shotgun
@@ -29,10 +37,6 @@ Run the your local server with
 If you want test out the models 
 
     $ rake console or bundle exec rake console
-
-Can also use tux gem to test, run in console
-
-    $ tux
 
 ## Gems Used.
   * Sinatra, "~> 2.0"
