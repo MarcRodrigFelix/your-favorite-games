@@ -1,9 +1,9 @@
-<h3>Delete this game <%= @game.title %>?</h3>
+<h3>Delete <%= @game.title %>?</h3>
 
 <form action="/games/<%= @game.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" name="Delete" value="Delete">
 </form>
 <br>
-<br>
 <a href="/games/<%= @game.id %>">Nevermind!</a> Lets not..
+<br>
