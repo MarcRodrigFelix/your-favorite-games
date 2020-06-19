@@ -5,11 +5,12 @@
 Your Favorite Games, was created to make a list of your all time favorite games. (Possibly share your list with others in the future.)
 
 ## What is Your Favorite Games.
+  * Can save users with signup.
   * Has login/logout features.
   
 ### You can create a brand new list of your favorite games here.
-  * Include a Title, 
-  * Genre
+  * Include a Title. 
+  * Include a Genre(sometimes we don't agree with publishers, so you can user your own).
   * Reason why it belongs in your list.
   
 ### You can also.
@@ -18,25 +19,26 @@ Your Favorite Games, was created to make a list of your all time favorite games.
   * Delete any game off your list.
   
 ## Installation.
-You can download this repo and try it out locally, clone the repo and run
+You can download this repo and try it out locally. Clone the repo and run
 
-    $ bundle install
+      $ bundle install
 
-If schema error or not loaded run
+Load schema if needed
 
-    $ rake db:schema:load
+      $ rake db:schema:load
 
-You can test out users if you dont want to create one, look at db/seeds.rb and run
+You can test out users if you dont want to create one, look at db/seeds.rb for the examples and run
 
-    $ rake db:seed
+      $ rake db:seed
 
-Run the your local server with
+Run your local server with 
 
-    $ shotgun or bundle exec shotgun
+      $ shotgun or bundle exec shotgun
+      $ view local server in browser with (localhost:9393) or use port that console shows
 
 If you want test out the models 
 
-    $ rake console or bundle exec rake console
+      $ rake console or bundle exec rake console
 
 ## Gems Used.
   * Sinatra, "~> 2.0"
